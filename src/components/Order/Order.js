@@ -25,7 +25,7 @@ const name = loggedInUser.name;
     
     console.log('submitted')
     const newOrder ={email,name, ...details , orderTime: new Date()};
-
+console.log(newOrder);
     fetch('http://localhost:5055/addOrder',{
 
   method: 'POST',
@@ -38,7 +38,13 @@ const name = loggedInUser.name;
     .then(res => res.json())
     .then(data => {
       console.log(data);
-if (data){
+
+if(data.value === null) {
+
+  alert('please select some product')
+}
+
+else if (data){
 
   alert(' Your Order Have Placed Successfully')
 }

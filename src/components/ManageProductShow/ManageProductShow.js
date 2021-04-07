@@ -1,24 +1,33 @@
 import React from 'react';
 import { Button, Table, } from 'react-bootstrap';
 const ManageProductShow = (props) => {
-    const { name, price, season, quantity } = props.item;
+    const { name, price, season,_id } = props.item;
 
    
+     const deleteProduct= id => {
+       console.log(id);
+      fetch(`http://localhost:5055/deleteProduct/${id} `,{
 
-//    const deleteProduct= id => {
-//      fetch(`http://localhost:5055/order/${email} `)
+         method: 'DELETE',
+
+      })
   
-//         method: 'DELETE'
+      .then(res => res.json())
+      
+      .then(result => {
+  
+    console.log('deleted product successfully')
+
+      })
+        
    
-//    .then(res => res.json())
-//    .then( result =>{
-// alert('deleted product')
 
-//    })
+
+  
 
 
 
-//    }
+   }
 
 
 
@@ -40,11 +49,11 @@ const ManageProductShow = (props) => {
             <td>{name}</td>
             <td>{season}</td>
             <td>{price}</td>
-            <td> <Button  variant="info">Delete</Button></td> 
-             {/* <td> <Button onClick={() => deleteProduct({_id}) } variant="info">Delete</Button></td>  */}
+           
+            <td> <Button onClick={() => deleteProduct(_id) } variant="info">Delete</Button></td>  
 
           </tr>
-
+          {/* onClick={() => deleteProduct(_id) } */}
           
         </tbody>
       </Table> 

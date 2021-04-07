@@ -5,13 +5,14 @@ import { Navbar, Container,NavDropdown,FormControl ,Form,Nav,Button  } from 'rea
 
 const Header = () => {
     return (
-        <div className="header navbar navbar-expand-lg navbar-light navbar-toggler align-items-center justify-content-around">
+        <div  className="header navbar navbar-expand-lg navbar-light navbar-toggler align-items-center justify-content-around">
             
 
-            <Navbar bg="success" expand="lg">
+            <Navbar bg="success" expand="lg">         
    <h3 style={{textSize:'300px', color:'white'}}>Crazy Gamer</h3> 
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
+   <div style={{marginRight:'5%'}}>
     <Nav style={{ color: 'white'}} className="mr-auto">
     <Link to="/home"><h2>Home</h2></Link>
         <Link to="/showProduct/1"> <h1>Order</h1> </Link>
@@ -22,6 +23,7 @@ const Header = () => {
 
         
     </Nav>
+    </div>
    
   </Navbar.Collapse>
 </Navbar>

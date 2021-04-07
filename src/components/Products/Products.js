@@ -46,7 +46,7 @@ const Products = () => {
 
   }
   return (
-    <div>
+    <div style={{textAlign: 'center'}}>
       <h1>Add your Product Items</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
       <br/>

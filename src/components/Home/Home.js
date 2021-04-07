@@ -5,37 +5,44 @@ import logo from '../../images/fifa.jpg';
 import * as ReactBootStrap from 'react-bootstrap';
 const Home = () => {
 
- const [products, setProducts] =useState([]);
- const [loadings, setLoadings] = useState([]);
- console.log(products);
-     useEffect(() => {
+    const [products, setProducts] = useState([]);
+
+    console.log(products);
+    useEffect(() => {
 
 
 
         fetch('http://localhost:5055/product')
-        .then(res => res.json())
-        .then(data => setProducts(data))
-         
+            .then(res => res.json())
+            .then(data => setProducts(data))
 
-     }, [])
-  
+
+    }, [])
+
 
     return (
-        <div style={{ backgroundImage: `url(${logo})`, height: '1400px'}}>
+        <div style={{ backgroundImage: `url(${logo})`, height: '1400px' }}>
             {
 
-          
-           products.map(product => <ShowProducts product={product} ></ShowProducts> )
 
-           
-      
+                products.length === 0 && <ReactBootStrap.Spinner animation="border" variant="warning" />
             }
-                 {loadings.length ===0 &&  <ReactBootStrap.Spinner animation="border" variant="warning" /> }  
 
-            
-             {/* <ReactBootStrap.Spinner animation="border" variant="warning" /> */}
 
-           
+            {
+
+
+                products.map(product => <ShowProducts product={product} ></ShowProducts>)
+
+
+
+            }
+
+
+
+
+
+
 
         </div>
     );

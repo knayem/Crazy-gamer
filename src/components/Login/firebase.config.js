@@ -1,9 +1,9 @@
-var firebaseConfig = {
-  apiKey: "AIzaSyBhtgJDC6hEQa6QUCj4VW-IPDGgZm475JY",
-  authDomain: "duronto-ridding.firebaseapp.com",
-  projectId: "duronto-ridding",
-  storageBucket: "duronto-ridding.appspot.com",
-  messagingSenderId: "885065103720",
-  appId: "1:885065103720:web:ebc3b6af02d2173538bedd"
+const firebaseConfig = {
+  apiKey: "AIzaSyDS_hq8AUrKhXBHG6RYYi97oLXwWudg8CE",
+  authDomain: "crazy-game-40eaa.firebaseapp.com",
+  projectId: "crazy-game-40eaa",
+  storageBucket: "crazy-game-40eaa.appspot.com",
+  messagingSenderId: "754283341444",
+  appId: "1:754283341444:web:af84b3e886dc509ccc44d1"
 };
 export default firebaseConfig;

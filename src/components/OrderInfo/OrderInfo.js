@@ -20,7 +20,7 @@ const OrderInfo = () => {
     }, [])
 
     return (
-        <div>
+        <div style={{textAlign: 'center'}}>
             <h2>Your Orders</h2>
 
             {
