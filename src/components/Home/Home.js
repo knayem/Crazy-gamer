@@ -12,7 +12,7 @@ const Home = () => {
 
 
 
-        fetch('http://localhost:5055/product')
+        fetch('https://intense-everglades-88181.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProducts(data))
 
@@ -21,7 +21,7 @@ const Home = () => {
 
 
     return (
-        <div style={{ backgroundImage: `url(${logo})`, height: '1400px' }}>
+        <div style={{ backgroundImage: `url(${logo})`, height: '1700px' }}>
             {
 
 

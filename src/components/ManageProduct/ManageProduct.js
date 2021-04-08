@@ -9,7 +9,7 @@ const ManageProduct = () => {
     
         useEffect(() => {
    
-           fetch('http://localhost:5055/product')
+           fetch('https://intense-everglades-88181.herokuapp.com/product')
            .then(res => res.json())
            .then(data => setProduct(data))
              }, [])

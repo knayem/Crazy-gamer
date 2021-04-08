@@ -9,7 +9,7 @@ const OrderInfo = () => {
 
     useEffect(() => {
 
-         fetch(`http://localhost:5055/order/${email} `)
+         fetch(`https://intense-everglades-88181.herokuapp.com/order/${email} `)
 
        // fetch('http://localhost:5055/order?email' + email)
 

@@ -7,51 +7,51 @@ import OrderInfo from '../OrderInfo/OrderInfo';
 //import {getDatabaseCart} from '../../utilities/databaseManager';
 const CheckOut = () => {
 
-  const [loggedInUser, setLoggedInUser] =useContext(UserContext)
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const { season } = useParams();
   const [details, setDetails] = useState({});
   console.log(season);
-  
+
   useEffect(() => {
 
-    fetch('http://localhost:5055/product/' + season)
+    fetch('https://intense-everglades-88181.herokuapp.com/product/' + season)
       .then(res => res.json())
       .then(data => setDetails(data));
 
   }, [])
- 
-const email =loggedInUser.email;
-const names = loggedInUser.name;
-const {quantity, price,name  } = details
-  const handleCheckOut= ()=> {
-    
-    console.log('submitted')
-    const newOrder ={email,names,price,quantity,name , orderTime: new Date()};
-console.log(newOrder);
-    fetch('http://localhost:5055/addOrder',{
 
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(newOrder)
+  const email = loggedInUser.email;
+  const names = loggedInUser.name;
+  const { quantity, price, name } = details
+  const handleCheckOut = () => {
+
+    console.log('submitted')
+    const newOrder = { email, names, price, quantity, name, orderTime: new Date() };
+    console.log(newOrder);
+    fetch('https://intense-everglades-88181.herokuapp.com/addOrder', {
+
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newOrder)
     })
 
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
 
-if(data.value === null) {
+        if (data.value === null) {
 
-  alert('please select some product')
-}
+          alert('please select some product')
+        }
 
-else if (data){
+        else if (data) {
 
-  alert(' Your Order Have Placed Successfully')
-}
+          alert(' Your Order Have Placed Successfully')
+        }
 
-    } );
+      });
 
 
   };
@@ -75,8 +75,8 @@ else if (data){
         <tbody>
           <tr>
             <td>{details.name}</td>
-             <td>{details.quantity}</td>
-            <td>{details.price}</td> 
+            <td>{details.quantity}</td>
+            <td>{details.price}</td>
 
           </tr>
 
@@ -89,9 +89,9 @@ else if (data){
       </Table>
       <Button onClick={handleCheckOut} style={{ marginTop: '2px' }} variant="primary"  >Check Out</Button>
 
-      <div Style={{textAlign: 'center'}}>
+      <div Style={{ textAlign: 'center' }}>
 
-         {/* <OrderInfo></OrderInfo> */}
+        {/* <OrderInfo></OrderInfo> */}
       </div>
 
     </div>

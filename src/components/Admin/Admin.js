@@ -13,10 +13,10 @@ import {
 const Admin = () => {
     return (
         <div style={{ backgroundImage: `url(${logo})`, height: '400px' }} >
-            
+           
             <Router>
             <AdminHeader></AdminHeader>
-            
+            <h1> Please Drop^down to work</h1>
         <Switch>
           <Route exact path="/">
           <ManageProduct/>

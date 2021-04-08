@@ -6,7 +6,7 @@ const ManageProductShow = (props) => {
    
      const deleteProduct= id => {
        console.log(id);
-      fetch(`http://localhost:5055/deleteProduct/${id} `,{
+      fetch(`https://intense-everglades-88181.herokuapp.com/deleteProduct/${id} `,{
 
          method: 'DELETE',
 

@@ -16,7 +16,7 @@ const Products = () => {
        imageURL: imageURL
      };
      console.log(productData);
-    const url = `http://localhost:5055/addProduct`;
+    const url = `https://intense-everglades-88181.herokuapp.com/addProduct`;
     
      fetch(url, {
        method: 'POST', 
