@@ -13,7 +13,7 @@ const AdminHeader = () => {
       <NavDropdown title="Dropdown" id="basic-nav-dropdown">
        
 
-        <Link to="/manageProduct">Manage Product</Link>
+        <Link to="/manageProduct/1">Manage Product</Link>
         <br/>
         <br/>
         <Link to="/addProduct">Add Product</Link>

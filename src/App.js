@@ -3,8 +3,9 @@ import './App.css';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
-import Order from './components/Order/Order';
+import CheckOut from './components/CheckOut/CheckOut';
 import Deals from './components/Deals/Deals';
+import Order from './components/Order/Order';
 import Admin from './components/Admin/Admin';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 //import Products from './components/Products/Products';
@@ -16,6 +17,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
 export const UserContext = createContext();
 
 
@@ -48,25 +50,15 @@ function App() {
             <Admin />
           </PrivateRoute>
 
-          {/* <PrivateRoute  path="/showProduct/:season"> */}
+         
           <PrivateRoute path="/showProduct/:season">
-            <Order />
+            <CheckOut />
           </PrivateRoute >
-          {/* </PrivateRoute> */}
-
-
-
-          {/* <Route path="/order">
+        
+          <PrivateRoute path="/order">
             <Order />
-          </Route> */}
+            </PrivateRoute>
 
-          {/* <Route path="*">
-           <NoMatch/>
-          </Route>  */}
-
-          {/* <Route path="/products">
-            <Products/>
-         </Route> */}
           <Route path="/deals">
             <Deals />
           </Route>

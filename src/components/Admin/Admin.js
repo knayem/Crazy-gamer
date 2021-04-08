@@ -3,7 +3,7 @@ import AdminHeader from '../AdminHeader/AdminHeader';
 import Products from '../Products/Products';
 import ManageProduct from '../ManageProduct/ManageProduct';
 import EditProduct from '../EditProduct/EditProduct';
-
+import logo from '../../images/admin.jpg';
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,8 +12,8 @@ import {
   } from "react-router-dom";
 const Admin = () => {
     return (
-        <div>
-            {/* <AdminHeader></AdminHeader> */}
+        <div style={{ backgroundImage: `url(${logo})`, height: '400px' }} >
+            
             <Router>
             <AdminHeader></AdminHeader>
         <Switch>
