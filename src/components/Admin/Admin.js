@@ -18,7 +18,7 @@ const Admin = () => {
             <AdminHeader></AdminHeader>
             <h1> Please Drop^down to work</h1>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/admin">
           <ManageProduct/>
           </Route>
           <Route path="/manageProduct">
