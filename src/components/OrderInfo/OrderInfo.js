@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
-
+import { Card } from 'react-bootstrap';
 const OrderInfo = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
@@ -21,18 +21,18 @@ const OrderInfo = () => {
 
     return (
         <div style={{textAlign: 'center'}}>
-            <h2>Your Orders</h2>
-
+            <h2>Your :{order.length} Orders</h2>
+          
             {
                 order.map(order => <ul>
-                    <li>{order.name} </li>
-                    <li>Season {order.season}</li>
-                    <li>Quantity:{order.quantity}</li>
-                    <li> Price:{order.price}$</li>
+                    
+                    <Card>
+  <Card.Body> <h3>{order.name}</h3> <h4>Season: {order.season}</h4> <h5>Price:{order.price}$. Quantity:{order.quantity}.</h5>
+  <h4>Buyer's Email:{order.email}</h4> <h3>Order at:{order.orderTime}</h3> </Card.Body>
 
-                    <li>Buyer's Email:{order.email}</li>
-                    <li>Order at:{order.orderTime}</li>
+</Card>
 
+                    
 
                 </ul>)
 

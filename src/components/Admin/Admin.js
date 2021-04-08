@@ -17,7 +17,7 @@ const Admin = () => {
             <Router>
             <AdminHeader></AdminHeader>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/admin">
           <ManageProduct/>
           </Route>
           <Route path="/manageProduct">

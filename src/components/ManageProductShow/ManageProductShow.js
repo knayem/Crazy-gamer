@@ -34,7 +34,7 @@ const ManageProductShow = (props) => {
     return (
         <div>
 
-<Table striped bordered hover size="sm">
+<Table style={{backgroundColor: 'white'}} striped bordered hover size="sm">
         <thead>
           <tr>
 
