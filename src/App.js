@@ -33,7 +33,7 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
 
 
-      <h3 style={{ textAlign: 'right' }}> {loggedInUser.name || loggedInUser.displayName || loggedInUser.email}</h3>
+    
 
 
       <Router>
