@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faGoogle } from '@fortawesome/free-solid-svg-icons'
-import { Button } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
@@ -163,38 +163,61 @@ const Login = () => {
     }
 
     return (
-        <div style={{ textAlign: 'center' }}>
-            <h2 style={{ color: 'green' }}>Login  Account </h2>
-            {/* <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
-            <label htmlFor="newUser">New User Sign up </label> */}
-            <form onSubmit={handleSubmit} style={{ backgroundColor: 'whiteSmoke', height: '250px' }}>
-
-                {newUser && <input type="text" onBlur={handleBlur} name="name" placeholder="Input Name" required /> }
-                <br />
-                <br />
-                <h6>Email:
-                <input type="text" onBlur={handleBlur} name="email" placeholder="Your email" required /></h6>
-                <br />
-                <h6>Password:
-                <input type="password" onBlur={handleBlur} name="password" placeholder="password" required /></h6>
-                <br />
-
-                {newUser && <input type="password" onBlur={handleBlur} name="ConfirmPassword" placeholder="confirmPassword" />}
-                <br />
-                <br />
-                <input style={{ color: 'green', width: '150px' }} type="submit" value={newUser ? 'Sign Up' : 'Sign In'} />
-            </form>
-            <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
-            <label style={{ color: 'green' }} htmlFor="newUser">New User Sign up </label>
-
-            <p style={{ color: 'red' }}>{user.error}</p>
-            {user.success && <p style={{ color: 'green' }}> User {newUser ? 'create' : 'Logged In'} Success </p>}
+        <div style={{  width:'400px' ,marginLeft:'10%',justifyContent: 'center'} }  >
 
 
-            <br></br>
-            <p>Or sign with</p>
-            <Button onClick={handleGoogleSignIn} variant="success">  <FontAwesomeIcon icon={faCoffee} /> Sign In With Google</Button>
-        </div>
+
+<h2  style={{ color: 'black',marginTop: '5%' ,textAlign:'center' ,fontSize:'40px' }}>𝙇𝙤𝙜𝙞𝙣 𝘼𝙘𝙘𝙤𝙪𝙣𝙩</h2>
+    <Container class="mt-5 d-flex " style={{marginLeft:'10%'}} >
+<Row>
+
+<Col class="md-5">
+
+
+<form  style={{backgroundColor:'whiteSmoke'}} onSubmit={handleSubmit} >
+  <div class="form-group">
+  { newUser && <label for="exampleInputEmail1">Email address</label> &&  <input type="text" id="login" class="form-control" onBlur={handleBlur} name="name" placeholder="Input Name" required /> }
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+  </div>
+  <div class="form-check">
+  <br></br>
+   
+               <input  style={{ marginLeft:'14%',width:'130px'}}  type="submit" class="btn btn-primary" value={newUser ? 'Sign Up' : 'Sign In'} />
+  </div>
+  
+</form >
+         <input style={{ marginLeft:'20%'}} type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
+             <label style={{ color: 'green' }} htmlFor="newUser">New User Sign up </label>
+ 
+ <div style={{ marginBottom:'10%' }}>
+ <p style={{ color: 'red' }}>{user.error}</p>
+             {user.success && <p style={{ color: 'green' }}> User {newUser ? 'create' : 'Logged In'} Success </p>}
+
+             <br></br>
+             
+             <p style={{color:'white', marginLeft:'25%'}}>Or sign with</p>
+            < Button style={{ marginLeft:'12%'}}  class="fadeIn fourth" onClick={handleGoogleSignIn} variant="success">  <FontAwesomeIcon icon={faCoffee} /> Sign In With Google</Button>
+
+
+ </div>
+        
+
+            
+</Col>
+
+
+
+</Row>
+
+
+    </Container>
+
+             </div>
     );
 };
 

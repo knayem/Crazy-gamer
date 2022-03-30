@@ -1,10 +1,10 @@
 
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Button, Table, } from 'react-bootstrap';
+import { Button, Table, Card,Container,Row,Col } from 'react-bootstrap';
 import { UserContext } from '../../App';
 import OrderInfo from '../OrderInfo/OrderInfo';
-//import {getDatabaseCart} from '../../utilities/databaseManager';
+import './CheckOut.css'
 const CheckOut = () => {
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
@@ -22,7 +22,7 @@ const CheckOut = () => {
 
   const email = loggedInUser.email;
   const names = loggedInUser.name;
-  const { quantity, price, name } = details
+  const { quantity, price, name,imageURL } = details
   const handleCheckOut = () => {
 
     console.log('submitted')
@@ -59,11 +59,18 @@ const CheckOut = () => {
   // const item = details && details.find(detail => season == detail.season);
 
   return (
-    <div style={{ marginTop: '3%', marginLeft: '1%' }}>
-      <h1>Check Out</h1>
+    <div id="section" style={{ marginTop: '3%', marginLeft: '1%' }}>
+       <Container>
+
+<Row>
+
+<Col><Card.Img style={{border:'round',width:'400px', height:'400px'}} variant="top" src={details.imageURL} /></Col>
+
+
+<Col>  <h1>Check Out</h1>
       <hr></hr>
 
-      <Table striped bordered hover size="sm">
+      <Table striped bordered hover size="md">
         <thead>
           <tr>
 
@@ -92,7 +99,14 @@ const CheckOut = () => {
       <div Style={{ textAlign: 'center' }}>
 
         {/* <OrderInfo></OrderInfo> */}
-      </div>
+      </div>   </Col>
+
+</Row>
+
+
+
+       </Container>
+     
 
     </div>
   );

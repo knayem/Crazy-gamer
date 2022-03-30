@@ -12,14 +12,14 @@ const Header = () => {
         <div  className="header navbar navbar-expand-lg navbar-light navbar-toggler align-items-center justify-content-around">
             
 
-            <Navbar bg="dark" expand="lg">         
+            <Navbar expand="lg" class="d-flex justify-content-around">         
    <h3 style={{textSize:'300px', color:'white'}}>Crazy Gamer</h3> 
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
-   <div style={{marginRight:'5%'}}>
-    <Nav style={{padding:'20px'}} className="mr-auto">
-    <Link to="/home"><h2>Home</h2></Link>
-        <Link to="/showProduct/1"> <h1>CheckOut</h1> </Link>
+   <div style={{marginRight:'5%'}}  >
+    <Nav style={{padding:'20px'}} className="mr-auto ">
+    <Link to="/home"><h1>Home</h1></Link>
+       
         <Link to="/order"><h2>Order</h2></Link>
         <Link to="/admin"><h1>Admin</h1> </Link>
         <Link to="/deals"><h2>Deals</h2></Link>

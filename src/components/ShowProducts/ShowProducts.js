@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Container, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 const ShowProducts = (props) => {
 
 
@@ -20,7 +20,7 @@ const ShowProducts = (props) => {
             {/* <h6 className="league-type" style={{ color: 'blue' }}> price: {price}$</h6> */}
              <Link to={`/showProduct/${season}`}>
             
-              <Button style={{ marginTop: '2px' }} variant="primary"  >Buy Now <FontAwesomeIcon icon={faArrowRight} /></Button>
+              <Button style={{ marginTop: '2px' }} variant="primary"  >Buy Now <FontAwesomeIcon icon={faShoppingCart} /></Button>
               </Link> 
           </Card.Text>
 
